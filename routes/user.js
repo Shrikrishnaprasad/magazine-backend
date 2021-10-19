@@ -44,8 +44,8 @@ router.post("/login", async (req, res) => {
 });
 
 // upd subscription plan
-router.post("/subscribe/:id", async (req, res) => {
-  const userId = req.params.id;
+router.post("/subscribe", async (req, res) => {
+  const userId = req.body.id;
   const amount = req.body.amount;
   try {
     const updPlan = await User.findByIdAndUpdate(
