@@ -18,14 +18,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //db config
 
-// mongoose
-//   .connect(process.env.MONGO_URL, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-
 mongoose
-  .connect("mongodb://localhost:27017/magazine")
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+
+  // mongoose
+  //   .connect("mongodb://localhost:27017/magazine")
 
   .then(() => console.log("MONGODB Connected successfully"))
   .catch((err) => console.log(err));
